@@ -1,5 +1,5 @@
 import random as rn
-import time
+import timeit
 
 def quicksort(array):
 
@@ -27,22 +27,11 @@ def create_unsorted_list(n):
     power = 10**n
     return rn.choices(range(0,power), k=power)
 
-# for i in range(1,3):
-#   array = create_unsorted_list(i)
-#   start_time = time.time()
-#   quicksort(array)
-#   end_time = time.time()
-#   print("Quicksort se demora:")
-#   print("--- %s segundos ---" %(end_time - start_time))
-#   print("para ordenar un arreglo de tamaño 10 ^", i)
-#   print("-------------------------------------------------")
-# print("Fin de la prueba")
-
 array = create_unsorted_list(9)
-start_time = time.time()
-quicksort(array)
-end_time = time.time()
+setup = f"from __main__ import quicksort, array; import random as rn; array = rn.sample(array, len(array))"
+time_taken = timeit.timeit("quicksort(array)", setup=setup, number=1)
 print("Quicksort se demora:")
-print("--- %s segundos ---" %(end_time - start_time))
-print("para ordenar un arreglo de tamaño 10 ^", 9)
+print("--- %s segundos ---" % time_taken)
+print("para ordenar un arreglo de tamaño 10 ^", i)
 print("-------------------------------------------------")
+print("Fin de la prueba")
