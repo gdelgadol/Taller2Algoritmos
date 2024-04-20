@@ -40,7 +40,7 @@ def create_unsorted_list(n):
     return rn.choices(range(0,power), k=power)
 
 for i in range(1,10):
-    array = create_unsorted_list(9)
+    array = create_unsorted_list(i)
     setup = f"from __main__ import merge_sort, array; import random as rn; array = rn.sample(array, len(array))"
     time_taken = timeit.timeit("merge_sort(array)", setup=setup, number=1)
     print("Merge sort se demora:")
