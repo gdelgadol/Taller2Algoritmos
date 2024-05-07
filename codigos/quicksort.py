@@ -37,7 +37,7 @@ def create_unsorted_list(n):
 
 for i in range(1,10):
     array = create_unsorted_list(i)
-    setup = f"from __main__ import quicksort, array; import random as rn; array = rn.sample(array, len(array))"
+    setup = f"from __main__ import quicksort, array; import random as rn"
     time_taken = timeit.timeit("quicksort(array)", setup=setup, number=1)
     print("Quicksort se demora:")
     print("--- %s segundos ---" % time_taken)

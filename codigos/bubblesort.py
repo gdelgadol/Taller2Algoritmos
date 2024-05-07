@@ -13,7 +13,7 @@ def create_unsorted_list(n):
 
 for i in range(1,6):
     array = create_unsorted_list(i)
-    setup = f"from __main__ import bubble_sort, array; import random as rn; array = rn.sample(array, len(array))"
+    setup = f"from __main__ import bubble_sort, array; import random as rn"
     time_taken = timeit.timeit("bubble_sort(array)", setup=setup, number=1)
     print("Bubble sort se demora:")
     print("--- %s segundos ---" % time_taken)
