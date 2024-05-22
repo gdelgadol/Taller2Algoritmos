@@ -139,6 +139,7 @@ plt.plot(sizes_bubble, timesBubbleSort, marker='^', label='BubbleSort')
 plt.xlabel('Tamaño del arreglo')
 plt.ylabel('Tiempo (segundos)')
 plt.title('Tiempos de ejecución comparados')
+plt.xscale('log')
 plt.legend()
 plt.show()
 
