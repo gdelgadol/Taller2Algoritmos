@@ -61,8 +61,6 @@ plt.plot(sizes, times, marker='o')
 plt.title('Tiempo de ejecución de MergeSort')
 plt.xlabel('Número de elementos a ordenar')
 plt.ylabel('Tiempo (segundos)')
-plt.xscale('log')
-plt.yscale('log')
 plt.grid(True)
 plt.show()
 
