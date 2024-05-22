@@ -83,38 +83,38 @@ def create_unsorted_list(n):
     return rn.choices(range(0,power), k=power)
 
 
-# sizes = []
+sizes = []
 sizes_bubble = []
-# timesQuickSort = []
-# timesMergeSort = []
+timesQuickSort = []
+timesMergeSort = []
 timesBubbleSort = []
 
-# #Run quicksort
-# for i in range(1,9):
-#     array = create_unsorted_list(i)
-#     setup = f"from __main__ import quicksort, array; import random as rn"
-#     time_taken = timeit.timeit("quicksort(array)", setup=setup, number=1)
-#     sizes.append(10**i)
-#     timesQuickSort.append(time_taken)
-#     print("Quicksort se demora:")
-#     print("--- %s segundos ---" % time_taken)
-#     print("para ordenar un arreglo de tamaño 10 ^", i)
-#     print("-------------------------------------------------")
+#Run quicksort
+for i in range(1,9):
+    array = create_unsorted_list(i)
+    setup = f"from __main__ import quicksort, array; import random as rn"
+    time_taken = timeit.timeit("quicksort(array)", setup=setup, number=1)
+    sizes.append(10**i)
+    timesQuickSort.append(time_taken)
+    print("Quicksort se demora:")
+    print("--- %s segundos ---" % time_taken)
+    print("para ordenar un arreglo de tamaño 10 ^", i)
+    print("-------------------------------------------------")
 
-# print("Fin de la prueba")
+print("Fin de la prueba")
 
-# #Run mergesort
-# for i in range(1,9):
-#     array = create_unsorted_list(i)
-#     setup = f"from __main__ import merge_sort, array; import random as rn"
-#     time_taken = timeit.timeit("merge_sort(array)", setup=setup, number=1)
-#     timesMergeSort.append(time_taken)
-#     print("Merge sort se demora:")
-#     print("--- %s segundos ---" % time_taken)
-#     print("para ordenar un arreglo de tamaño 10 ^", i)
-#     print("-------------------------------------------------")
+#Run mergesort
+for i in range(1,9):
+    array = create_unsorted_list(i)
+    setup = f"from __main__ import merge_sort, array; import random as rn"
+    time_taken = timeit.timeit("merge_sort(array)", setup=setup, number=1)
+    timesMergeSort.append(time_taken)
+    print("Merge sort se demora:")
+    print("--- %s segundos ---" % time_taken)
+    print("para ordenar un arreglo de tamaño 10 ^", i)
+    print("-------------------------------------------------")
 
-# print("Fin de la prueba")
+print("Fin de la prueba")
 
 #Run Bubblesort
 for i in range(1,6):
@@ -132,8 +132,8 @@ print("Fin de la prueba")
 
 
 #PLot all
-# plt.plot(sizes, timesQuickSort, marker='o', label='Quicksort')
-# plt.plot(sizes, timesMergeSort, marker='s', label='MergeSort')
+plt.plot(sizes, timesQuickSort, marker='o', label='Quicksort')
+plt.plot(sizes, timesMergeSort, marker='s', label='MergeSort')
 plt.plot(sizes_bubble, timesBubbleSort, marker='^', label='BubbleSort')
 
 plt.xlabel('Tamaño del arreglo')
